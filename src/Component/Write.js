@@ -6,12 +6,16 @@ export default function Write({ goBack, onSubmit }) {
     description: "",
     price: "",
     image: "",
+    priceNegotiable: false,
     date: new Date(Date.now()),
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({ ...product, [name]: value }); //입력필드 name속성 : 값 으로 product에 업데이트
+    const { name, value, type, checked } = e.target;
+    setProduct({
+      ...product,
+      [name]: type === "checkbox" ? checked : value, // 체크박스일 경우 checked 값을 사용
+    });
   };
 
   return (
@@ -87,7 +91,13 @@ export default function Write({ goBack, onSubmit }) {
               className="input-field"
             />
             <div className="checkbox-container">
-              <input type="checkbox" id="priceNegotiable" />
+              <input
+                type="checkbox"
+                id="priceNegotiable"
+                name="priceNegotiable"
+                onChange={handleChange}
+                checked={product.priceNegotiable}
+              />
               <label htmlFor="priceNegotiable">가격 제안 받기</label>
             </div>
           </div>
