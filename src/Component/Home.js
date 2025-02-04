@@ -1,14 +1,17 @@
 import React from "react";
 import "../Style/Home.css";
 import "../Style/RayOut.css";
-export default function Home() {
+export default function Home({ onWriteClick, onComunityClick, onDetailClick }) {
   return (
     <div>
       <h1>당근마켓</h1>
       <div className="nav">
-        <div>게시글 동네생활</div>
-        <div>내 근처 채팅</div>
+        <div className="detail" onClick={() => onDetailClick()}>
+          이거 누르면 세부정보로 이동해요
+        </div>
       </div>
+      <button onClick={onWriteClick}> 글쓰기 </button>
+      <button onClick={onComunityClick}> 커뮤니티 </button>
     </div>
   );
 }

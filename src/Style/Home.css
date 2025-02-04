@@ -1,4 +1,6 @@
 .nav{
     border: 1px solid black; /* 선의 두께, 스타일, 색상을 모두 지정 */
     color: coral;
+    height: 750px;
+    width: 500px;
 }
