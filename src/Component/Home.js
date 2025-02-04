@@ -1,7 +1,12 @@
 import React from "react";
 import "../Style/Home.css";
 import "../Style/RayOut.css";
-export default function Home({ onWriteClick, onComunityClick, onDetailClick }) {
+export default function Home({
+  onWriteClick,
+  onComunityClick,
+  onDetailClick,
+  posts,
+}) {
   return (
     <div>
       <h1>당근마켓</h1>
