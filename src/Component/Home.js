@@ -20,7 +20,7 @@ export default function Home({
           최신 항목 {posts.length > 0 ? posts[0].name : ""}
         </div>
       </div>
-      <button onClick={onWriteClick}> 글쓰기 </button>
+      <button onClick={onWriteClick}> 상품 올리기 </button>
       <button onClick={onComunityClick}> 커뮤니티 </button>
     </div>
   );
