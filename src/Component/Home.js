@@ -12,21 +12,15 @@ export default function Home({
     <div>
       <h1>당근마켓</h1>
       <div className="nav">
-        <div>
-          {posts.map((post) => (
-            <div
-              key={post.id}
-              className="detail"
-              onClick={() => onDetailClick(post.id)}
-            >
-              <img src={post.image} alt="" /> {/*물품 이미지*/}
-              {post.name} {/*물품 이름*/}
-              가격: {post.price} {/*물품 가격*/}
-            </div>
-          ))}
+        <div className="detail" onClick={() => onDetailClick()}>
+          이거 누르면 세부정보로 이동해요
+        </div>
+
+        <div className="detail" onClick={() => onDetailClick()}>
+          최신 항목 {posts.length > 0 ? posts[0].name : ""}
         </div>
       </div>
-      <button onClick={onWriteClick}> 글쓰기 </button>
+      <button onClick={onWriteClick}> 상품 올리기 </button>
       <button onClick={onComunityClick}> 커뮤니티 </button>
     </div>
   );

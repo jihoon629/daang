@@ -4,6 +4,7 @@ import "./Style/index.css";
 import "./Style/detail.css";
 import "./Style/Write.css";
 import "./Style/CounityWrite.css"
+import "./Style/comunity.css"
 
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
