@@ -1,3 +1,11 @@
+.community-write-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+
 .container{
     display: flex;
     flex-direction: column;
@@ -7,6 +15,9 @@
 }
 
 .fied{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 130%;
     height: 650px; /* 전체 높이 조정 */
     border: 1px solid #ddd;
@@ -55,12 +66,11 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 133%;
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .btn {
-    flex: 1;
+    width:100%;
     padding: 10px;
     font-size: 16px;
     color: white;

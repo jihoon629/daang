@@ -8,6 +8,7 @@ export default function Comunity({
   onBoardClick,
 }) {
   return (
+    <div className="community-write-container">
     <div className="bigcontainer">
       <div className="container">
         <div className="fied">
@@ -29,11 +30,12 @@ export default function Comunity({
               ))
             )}
           </div>
-        </div>
-        <div className="button">
-          <button className="btn write-btn" onClick={onComunity_write}>글쓰기</button>
+          <div className="button">
+            <button className="btn write-btn" onClick={onComunity_write}>글쓰기</button>
+          </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
