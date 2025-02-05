@@ -1,39 +1,44 @@
 import React from "react";
 import "../Style/Home.css";
 import "../Style/RayOut.css";
+
 export default function Home({
   onWriteClick,
   onComunityClick,
   onDetailClick,
-    posts,
-  }) {
-    console.log(posts);
-    return (
-      <div>
-        <h1>당근마켓</h1>
-        <div className="nav">
-          {/* <div className="detail" onClick={() => onDetailClick()}>
-            이거 누르면 세부정보로 이동해요
-          </div> */}
-  
-          <div className="detail" onClick={() => onDetailClick()}>
-            {/* 최신 항목 {posts.length > 0 ? posts[0].name : ""} */}
-  
-            {posts.map((posts) => (
-              <p className="detail_1">
-                <div key={posts.id}>
-                  <img src={posts.image} alt=""/> {/*물품 이미지*/}
-                  {posts.name} {/*물품 이름*/}
-                  {posts.price} {/*물품 가격*/}
-                  등록 일자 : {new Date(posts.date).getFullYear()}년 {new Date(posts.date).getMonth()+1}월 {new Date(posts.date).getDate()}월
-                  {/*물품 등록 날짜jj*/}
-                </div>
-              </p>
-            ))}
-          </div>
+  posts,
+}) 
+{
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}년${month}월${day}일`;
+  };
+
+  console.log(posts);
+  return (
+    <div>
+      <h1>당근마켓</h1>
+      <div className="nav">
+        <div>
+          {posts.map((post) => (
+            <div
+              key={post.id}
+              className="detail"
+              onClick={() => onDetailClick(post.id)}>
+              <img src={post.image} alt="" /> {/*물품 이미지*/}
+              {post.name} {/*물품 이름*/}
+              가격: {post.price} {/*물품 가격*/}
+              네고 여부 (아이콘)<br/>
+              등록 날짜 : {formatDate(post.date)}
+            </div>
+          ))}
         </div>
-        <button onClick={onWriteClick}> 글쓰기 </button>
-        <button onClick={onComunityClick}> 커뮤니티 </button>
       </div>
-    );
-  }
+      <button onClick={onWriteClick}> 글쓰기 </button>
+      <button onClick={onComunityClick}> 커뮤니티 </button>
+    </div>
+  );
+}
