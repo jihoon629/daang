@@ -3,31 +3,31 @@
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    }
-    
-    .product-form {
-    width: 100%;
-    max-width: 400px;
+}
+
+.product-form {
+    width: 100vw;
+    max-width: 436px;
     padding: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    }
-    
-    .form-title {
+}
+
+.form-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 16px;
     margin-left: 5px;
-    }
-    
-    .image-upload-container {
+}
+
+.image-upload-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 16px;
-    }
-    
-    .image-preview {
+}
+
+.image-preview {
     width: 100px;
     height: 100px;
     border: 1px solid #ccc;
@@ -36,56 +36,78 @@
     justify-content: center;
     border-radius: 8px;
     margin-bottom: 8px;
-    }
-    
-    .image-preview-img {
+}
+
+.image-preview-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    }
-    
-    .form-fields {
+}
+
+.form-fields {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    }
-    
-    .input-field {
+}
+
+.input-field {
     width: 95%;
     padding: 8px;
     margin-top: 4px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    }
-    
-    .button-group {
+}
+
+/*파일 업로드 style*/
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    transition: background-color 200ms;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #FF6F00;
+    color:white;
+}
+
+input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+}
+
+.button-group {
     display: flex;
     gap: 8px;
     margin-top: 4px;
-    }
-    
-    .transaction-button {
+}
+
+.transaction-button {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #ddd;
     cursor: pointer;
-    }
-    
-    .transaction-button.active {
+}
+
+.transaction-button.active {
     background-color: #FF6F00;
     color: white;
-    }
-    
-    .checkbox-container {
+}
+
+.checkbox-container {
     display: flex;
     align-items: center;
     margin-top: 4px;
-    }
-    
-    .submit-button {
+}
+
+.submit-button {
     width: 100%;
     padding: 12px;
     background-color: #FF6F00;
@@ -94,14 +116,14 @@
     border-radius: 4px;
     margin-top: 8px;
     cursor: pointer;
-    }
-    
-    .form-header {
+}
+
+.form-header {
     display: flex;
     align-items: center;
-    }
-    
-    .description-i {
-        width: 25px;
-        height: 20px;
-    }
+}
+
+.description-i {
+    width: 25px;
+    height: 20px;
+}
