@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ComunityBorad({ post , goBackComunity  }) {
+export default function ComunityBorad({ post, goBackComunity }) {
   return (
     <div>
       id: {post.id}

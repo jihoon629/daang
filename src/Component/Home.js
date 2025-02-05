@@ -22,6 +22,7 @@ export default function Home({
               <img src={post.image} alt="" /> {/*물품 이미지*/}
               {post.name} {/*물품 이름*/}
               가격: {post.price} {/*물품 가격*/}
+              네고 여부 (아이콘)
             </div>
           ))}
         </div>

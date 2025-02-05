@@ -4,3 +4,9 @@
     height: 750px;
     width: 500px;
 }
+
+.detail img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover; /* 이미지 비율 유지하면서 크기 조정 */
+  }

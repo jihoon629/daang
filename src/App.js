@@ -96,6 +96,7 @@ export default function App() {
         return (
           <ComunityBorad
             post={comunityPosts.find((p) => p.id === selectedBoardId)}
+            goBackComunity={goBackComunity}
           />
         );
       default:
