@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IoArrowBack } from "react-icons/io5";
 
 export default function ComunityWrite({ addPost, goBackComunity }) {
   const [title, setTitle] = useState(""); // 제목
@@ -16,38 +15,29 @@ export default function ComunityWrite({ addPost, goBackComunity }) {
   };
 
   return (
-    <div className="community-write-container">
-        <form className="community-write-form" onSubmit={handleSubmit}>
-          
-        <div className="form-header" style={{ display: "flex", alignItems: "center" }}>
-        <IoArrowBack size="25" title="뒤로가기" onClick={goBackComunity}/>
-        <h2 className="from-title">커뮤니티 글쓰기</h2>
-        </div>
-
+    <div>
+      <h1>커뮤니티 글쓰기</h1>
+      <form onSubmit={handleSubmit}>
         <div>
-          {/* <label>제목</label> */}
+          <label>제목</label>
           <input
-            className="input-filed-header"
             type="text"
             placeholder="제목을 입력하세요"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-
         <div>
-          {/* <label>내용</label> */}
+          <label>내용</label>
           <textarea
-            className="input-filed-content"
-            placeholder="동네 이웃과 이야기를 나눠보세요.&#10;#맛집 #병원 #산책..."
+            placeholder="내용을 입력하세요"
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
         </div>
-
-        <button className="submit-button" type="submit">저장</button>
+        <button type="submit">저장</button>
       </form>
-      {/* <button className="back-button" onClick={goBackComunity}>뒤로가기</button> */}
+      <button onClick={goBackComunity}>뒤로가기</button>
     </div>
   );
 }

@@ -7,27 +7,31 @@ export default function Comunity({
   onBoardClick,
 }) {
   return (
-    <div>
-      <h1>커뮤니티</h1>
-      <div className="fied">
-        <h2>게시글 목록</h2>
-        {posts.length === 0 ? (
-          <p>작성된 게시글이 없습니다.</p>
-        ) : (
-          posts.map((post) => (
-            <div
-              key={post.id}
-              className="post"
-              onClick={() => onBoardClick(post.id)}
-            >
-              <h3>{post.title}</h3>
-              <p>{post.content}</p>
-            </div>
-          ))
-        )}
+    <div className="bigcontainer">
+      <div className="container">
+        <div className="fied">
+          <h3 className="title">백석동</h3>
+          <div className="board">
+            {posts.length === 0 ? (
+              <p className="empty">작성된 게시글이 없습니다.</p>
+            ) : (
+              posts.map((post) => (
+                <div
+                  key={post.id}
+                  className="post"
+                  onClick={() => onBoardClick(post.id)}
+                >
+                  <h3>{post.title}</h3>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+        <div className="button">
+          <button className="btn write-btn" onClick={onComunity_write}>글쓰기</button>
+          <button className="btn back-btn" onClick={goBackHome}> 뒤로가기 </button>
+        </div>
       </div>
-      <button onClick={onComunity_write}>글쓰기</button>
-      <button onClick={goBackHome}> 뒤로가기 </button>
     </div>
   );
 }

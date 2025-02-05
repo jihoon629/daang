@@ -55,21 +55,13 @@ export default function App() {
           <Home
             posts={posts}
             onWriteClick={() => setCurrentPage("write")}
-            onDetailClick={(PostId) => {
-              setSelectedPostId(PostId);
-              setCurrentPage("detail");
-            }}
+            onDetailClick={() => setCurrentPage("detail")}
             onComunityClick={() => setCurrentPage("comunity")}
           />
         );
 
       case "detail":
-        return (
-          <Detail
-            goBack={goBackHome}
-            post={posts.find((p) => p.id === selectedPostId)}
-          />
-        );
+        return <Detail goBack={goBackHome} />;
       case "write":
         return <Write goBack={goBackHome} onSubmit={addPosts} />;
       case "comunity_write": // 새로운 ComunityWrite 페이지로 이동
@@ -96,6 +88,7 @@ export default function App() {
         return (
           <ComunityBorad
             post={comunityPosts.find((p) => p.id === selectedBoardId)}
+            goBackComunity = {goBackComunity}
           />
         );
       default:
