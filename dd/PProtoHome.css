@@ -1,0 +1,45 @@
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .posts > div {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .posts > div:hover {
+    transform: scale(1.05);
+  }
+
+  .Home{
+    border: 1px solid black;
+    width: 500px;
+    height: 750px;
+  }
+  
+  img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6f0f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  button:hover {
+    background-color: #e65c00;
+  }
