@@ -1,22 +1,78 @@
-.nav{
-    border: 1px solid black; /* 선의 두께, 스타일, 색상을 모두 지정 */
-    color: coral;
-    height: 40vw;
+.nav {
+    border: 2px solid #ddd;
+    color: #333;
+    height: 750px;
     width: 500px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 .detail img {
-    max-width: 100px;
-    max-height: 100px;
-    object-fit: cover; /* 이미지 비율 유지하면서 크기 조정 */
+    max-width: 150px;
+    max-height: 120px;
+    border-radius: 8px;
+    
 }
 
-.bottom-navbar {
+.detail-info {
+    flex: 1;
     display: flex;
-    justify-content: space-around; 
-    padding: 10px;
-    background-color: white; 
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.detail-price {
+    font-size: 18px;
+    color: #666;
+}
+
+.detail-negotiable {
+    font-size: 16px;
+    color: #888;
+}
+
+.button-container {
+    margin-top: 16px;
+    display: flex; 
+    justify-content: center; 
+    gap: 16px; 
+}
+
+.action-button {
+    flex: 1; 
+    max-width: 150px;
+    padding: 12px 24px;
+    background-color: #FF6F00; 
+    color: #fff;
+    border: none; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    text-align: center; 
+}
+
+.page-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #FF6F00; 
+    text-align: center;
 }

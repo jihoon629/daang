@@ -56,5 +56,6 @@
 }
 
 .detail {
-    display: block;
+    display: block !important;
+    border:none !important;
 }
