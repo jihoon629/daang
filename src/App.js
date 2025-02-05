@@ -16,7 +16,11 @@ export default function App() {
   useEffect(() => {
     // 로컬스토리지에서 게시글 불러오기
     const savedPosts = JSON.parse(localStorage.getItem("posts") || "[]");
+    const saveComunityPosts = JSON.parse(
+      localStorage.getItem("comunityPosts") || "[]"
+    );
     setPosts(savedPosts);
+    setComunityPosts(saveComunityPosts);
   }, []);
 
   const goBackHome = () => {
