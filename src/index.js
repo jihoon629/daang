@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./Style/index.css";
 import "./Style/detail.css";
 import "./Style/Write.css";
+import "./Style/CounityWrite.css"
 
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
