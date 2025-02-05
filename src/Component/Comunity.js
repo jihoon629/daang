@@ -8,7 +8,6 @@ export default function Comunity({
   onBoardClick,
 }) {
   return (
-    <div className="community-write-container">
     <div className="bigcontainer">
       <div className="container">
         <div className="fied">
@@ -35,7 +34,6 @@ export default function Comunity({
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

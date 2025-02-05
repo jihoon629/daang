@@ -15,14 +15,15 @@
 }
 
 .fied{
+    padding:30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 130%;
-    height: 650px; /* 전체 높이 조정 */
+    width: 304px;
+    height: 543px; /* 전체 높이 조정 */
     border: 1px solid #ddd;
     border-radius: 5px;
-    background: #f5f5f5; /* 배경색 추가 */
+    background: #ffffff; /* 배경색 추가 */
     overflow: hidden;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
@@ -31,10 +32,11 @@
     font-size: 25px;
     text-align: left;
     margin: 0;
-    padding: 15px 20px;
+    padding: 20px 0px;
     width: 100%;
     background-color: white;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .board {
