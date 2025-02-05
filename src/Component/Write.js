@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoArrowBack } from "react-icons/io5";
 
 export default function Write({ goBack, onSubmit }) {
   const [product, setProduct] = useState({
@@ -8,6 +9,7 @@ export default function Write({ goBack, onSubmit }) {
     image: "",
     priceNegotiable: false,
     date: new Date(Date.now()),
+    id: Date.now() 
   });
 
   const handleChange = (e) => {
@@ -22,11 +24,7 @@ export default function Write({ goBack, onSubmit }) {
     <div className="product-form-container">
       <div className="product-form">
         <div className="form-header" style={{ display: "flex", alignItems: "center" }}>
-          <svg onClick={goBack} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6"
-            style={{ width: "24px", height: "24px", marginRight: "8px" }}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
-          </svg>
-
+          <IoArrowBack size="25" title="뒤로가기" onClick={goBack}/>
           <h2 className="form-title">내 물건 팔기</h2>
         </div>
 
@@ -64,10 +62,18 @@ export default function Write({ goBack, onSubmit }) {
 
           <div>
             <label>거래 희망 장소</label>
-            <input name="location" placeholder="장소 선택" className="input-field"/>
+            <input name="location" onChange={handleChange} placeholder="장소 선택" className="input-field"/>
           </div>
 
           <button className="submit-button" onClick={() => { 
+              const requiredFields = [product.name, product.description, product.price];
+              const ifEmpty = requiredFields.some(field => field.trim() === "");  //some() 배열 안의 하나라도 조건을 통과 못하면 true 반환
+
+              if (ifEmpty) {
+                alert("모든 필드를 입력해주세요."); // 비어있는 필드가 있을 경우 경고
+                return; // 제출을 중단
+              }
+
               onSubmit(product);
               console.log(product);
             }}>
