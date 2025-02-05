@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
-export default function ComunityWrite({ addPost, goBack }) {
+export default function ComunityWrite({ addPost, goBackComunity }) {
   const [title, setTitle] = useState(""); // 제목
   const [content, setContent] = useState(""); // 내용
+  const [id, setId] = useState(Date.now());
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (title && content) {
-      addPost(title, content);
-      goBack(); //  글 작성 후 커뮤니티 페이지로 이동
+      addPost(id, title, content);
+      goBackComunity(); //  글 작성 후 커뮤니티 페이지로 이동
     }
   };
 
@@ -36,7 +37,7 @@ export default function ComunityWrite({ addPost, goBack }) {
         </div>
         <button type="submit">저장</button>
       </form>
-      <button onClick={goBack}>뒤로가기</button>
+      <button onClick={goBackComunity}>뒤로가기</button>
     </div>
   );
 }
