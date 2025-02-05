@@ -46,8 +46,21 @@ export default function App() {
     setCurrentPage("comunity"); // 글 작성 후 커뮤니티 페이지로 이동
   };
 
-  const deletePosts = () => {};
+  const deletePosts = (postId) => {
+    const updatedPosts = posts.filter((post) => post.id !== postId);
+    setPosts(updatedPosts);
+    localStorage.setItem("posts", JSON.stringify(updatedPosts));
+    setCurrentPage("home");
+  };
 
+  const deleteBoard = (postId) => {
+    const updatedComunityPosts = comunityPosts.filter(
+      (post) => post.id !== postId
+    );
+    setComunityPosts(updatedComunityPosts);
+    localStorage.setItem("comunityPosts", JSON.stringify(updatedComunityPosts));
+    setCurrentPage("comunity");
+  };
   const renderPage = () => {
     switch (currentPage) {
       case "home":
@@ -68,6 +81,7 @@ export default function App() {
           <Detail
             goBack={goBackHome}
             post={posts.find((p) => p.id === selectedPostId)}
+            onDelete={deletePosts}
           />
         );
       case "write":
@@ -89,7 +103,6 @@ export default function App() {
               setSelectedBoardId(BoardId);
               setCurrentPage("boardDetail");
             }}
-            onDelete={deletePosts}
           />
         );
       case "boardDetail":
@@ -97,6 +110,7 @@ export default function App() {
           <ComunityBorad
             post={comunityPosts.find((p) => p.id === selectedBoardId)}
             goBackComunity={goBackComunity}
+            onDelete={deleteBoard}
           />
         );
       default:
